@@ -29,3 +29,9 @@ app.get("/profile", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
+
+app.get("/greet", (req, res) => {
+  const name = req.query.name;
+
+  res.send(`Hello ${name}`);
+});
