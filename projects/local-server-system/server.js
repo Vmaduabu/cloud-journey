@@ -3,6 +3,15 @@ const express = require("express");
 const app = express();
 const PORT = 5000;
 
+// Middleware
+app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log(`${req.method} request made to ${req.url}`);
+  next();
+});
+
+// Routes
 app.get("/", (req, res) => {
   res.send("Hello Cloud Journey");
 });
@@ -26,12 +35,22 @@ app.get("/profile", (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
-
 app.get("/greet", (req, res) => {
   const name = req.query.name;
 
   res.send(`Hello ${name}`);
+});
+
+app.post("/message", (req, res) => {
+  console.log(res.body);
+
+  res.json({
+    status: "Message received",
+    data: req.body
+  });
+});
+
+// Start Server
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
 });

@@ -74,3 +74,27 @@ Query parameters send data through URLS.
 - Backend systems process requests and return responses.
 - APIs can receive dynamic input.
 - Status codes communicate system state.
+
+# Middleware Request Flow
+
+1. Requests enters server
+2. Middleware processes request
+3. Route handles request
+4. Response returned
+
+# May 21 Notes
+
+## Middleware
+Middleware processes requests before routes execute.
+
+## GET vs POST
+GET retrieves data.
+POST sends data to backend systems.
+
+## JSON Parsing
+express.json() lets the backend read incoming JSON data.
+
+## What I learned 
+- Middleware runs before routes.
+- Backend systems can receive incoming data
+- APIs process requests and return responses 
