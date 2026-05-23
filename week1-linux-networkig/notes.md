@@ -131,3 +131,33 @@ Databases provide persistent storage for backend systems
  - APIs often interact with databases.
  - Backend systems store and retrieve data.
  - CRUD operations power modern applications.
+
+ # Project Reflection - Environmental Variables
+
+ ## What did I Build?
+ I updated my backend to load configuration dynamically using environment variables.
+
+ ## What problem does it solve?
+ It seperates configuration and secrets from application code.
+
+ ## What decisions did I make and Why?
+ I used dotenv and a .env file because production systems should avoid hardcoded configuration.
+
+ ## What I would improve?
+ I would eventually move secrets into a real cloud secret manager instead of a local .env file.
+
+ # May 23 Notes
+
+## Environment Variables
+Environment variables store configuration outside application code.
+
+## dotenv
+dotenv loads environment variables from a .env file.
+
+## Why Environment Variables Matter
+Production systems avoid hardcoded configuration and secrets.
+
+## What I learned
+- Backend systems seperate config from logic.
+- Production systems rely heavily on environmental variables.
+- Environment variables improve security and flexibility.

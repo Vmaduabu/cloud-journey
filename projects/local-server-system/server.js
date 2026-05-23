@@ -1,7 +1,7 @@
 const express = require("express");
-
+require ("dotenv").config();
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 const messages = [];
 
@@ -54,6 +54,13 @@ app.post("/message", (req, res) => {
 
 app.get("/messages", (req, res) => {
   res.json(messages);
+});
+
+app.get("/config", (req, res) => {
+  res.json({
+    port: process.env.PORT,
+    app: process.env.APP_NAME
+  });
 });
 
 // Start Server
