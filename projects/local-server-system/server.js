@@ -3,6 +3,8 @@ const express = require("express");
 const app = express();
 const PORT = 5000;
 
+const messages = [];
+
 // Middleware
 app.use(express.json());
 
@@ -42,12 +44,16 @@ app.get("/greet", (req, res) => {
 });
 
 app.post("/message", (req, res) => {
-  console.log(res.body);
+  messages.push(req.body);
 
   res.json({
-    status: "Message received",
-    data: req.body
+    status: "Message stored",
+    data: messages
   });
+});
+
+app.get("/messages", (req, res) => {
+  res.json(messages);
 });
 
 // Start Server

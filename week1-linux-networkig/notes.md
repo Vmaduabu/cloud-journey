@@ -98,3 +98,36 @@ express.json() lets the backend read incoming JSON data.
 - Middleware runs before routes.
 - Backend systems can receive incoming data
 - APIs process requests and return responses 
+
+# Backend Architecture Flow
+
+Client 
+↓
+API Request
+↓
+Middleware
+↓
+Route logic
+↓
+Databases/Storage
+↓
+Response Returned
+
+# May 22 Notes 
+
+## Databases
+Databases provide persistent storage for backend systems
+
+ ## CRUD
+ CREATE = add data
+ READ = retrieve data
+ UPDATE = modify data
+ DELETE = remove data
+
+ ## Backend Architecture 
+ Backend sysems process requests and interact with storage systems
+
+ ## What I learned 
+ - APIs often interact with databases.
+ - Backend systems store and retrieve data.
+ - CRUD operations power modern applications.
