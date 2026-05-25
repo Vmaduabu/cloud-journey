@@ -1,9 +1,10 @@
 const express = require("express");
-require ("dotenv").config();
+require("dotenv").config();
+
 const app = express();
 const PORT = process.env.PORT;
 
-const messages = [];
+const messageRoutes = require("./routes/messages");
 
 // Middleware
 app.use(express.json());
@@ -12,6 +13,8 @@ app.use((req, res, next) => {
   console.log(`${req.method} request made to ${req.url}`);
   next();
 });
+
+app.use(messageRoutes);
 
 // Routes
 app.get("/", (req, res) => {
@@ -41,19 +44,6 @@ app.get("/greet", (req, res) => {
   const name = req.query.name;
 
   res.send(`Hello ${name}`);
-});
-
-app.post("/message", (req, res) => {
-  messages.push(req.body);
-
-  res.json({
-    status: "Message stored",
-    data: messages
-  });
-});
-
-app.get("/messages", (req, res) => {
-  res.json(messages);
 });
 
 app.get("/config", (req, res) => {

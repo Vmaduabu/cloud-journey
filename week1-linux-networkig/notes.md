@@ -161,3 +161,34 @@ Production systems avoid hardcoded configuration and secrets.
 - Backend systems seperate config from logic.
 - Production systems rely heavily on environmental variables.
 - Environment variables improve security and flexibility.
+
+# Modular Backend Architecture
+
+Large backend systems seperate routes and responsibilities into different files to improve organization, scalability, and maintainability.
+
+# Project Reflection - Modular Backend Architecture
+
+## What did I build?
+I recognized my backend by separating message routes into their own module.
+
+## What problem does it solve?
+It improves organization and makes backend systems easier to scale and maintain.
+
+## What decisions did I make and Why?
+I seperated Routes into different files because production systems should avoid keeping all backend logic in one script.
+
+## What would I improve?
+I would eventually seperate middleware, configuration, and database logic into their own folders as well.   
+
+## May 24 Notes
+
+## Modular Architecture
+Backend systems often seperate routes and responsibilities into different files.
+
+## Why Organizational Matters
+Modular systems are easier to scale, debug, and maintain.
+
+## What I Learned
+- Production systems avoid giant single-file architectures.
+- Backend routes can be seperated into modules.
+- Scalable systems rely heavily on organization.
