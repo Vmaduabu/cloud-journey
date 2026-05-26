@@ -217,3 +217,8 @@ Backend systems use status codes to communicate success and failure.
 
 ## Validation
 Validation protects systems from incomplete or invalid data.
+
+## What I learned
+- APIs should be consistent and organized.
+- Production systems must handle failures gracefully.
+- Backend systems validate incoming requests.
