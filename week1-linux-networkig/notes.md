@@ -192,3 +192,28 @@ Modular systems are easier to scale, debug, and maintain.
 - Production systems avoid giant single-file architectures.
 - Backend routes can be seperated into modules.
 - Scalable systems rely heavily on organization.
+
+# Project Reflection - REST APIs and Error Handling
+
+## What did I build?
+I improved my backend API by adding validation, status codes, and error handling routes.
+
+## What problem did it solve
+It helps backend systems handle invalid requests and operational failures more reliably.
+
+## What decisions did I make and why?
+I added validation and status codes beacuse production APIs should communicate failures clearly and avoid accepting incomplete data.
+
+# What I would improve?
+I would eventually add centralized error-handling middlware and persistent database validation.
+
+## May 25 Notes
+
+## REST APIs
+Rest APIs organize backend communication using structured routes and predictable behaviors.
+
+## Status Codes
+Backend systems use status codes to communicate success and failure.
+
+## Validation
+Validation protects systems from incomplete or invalid data.

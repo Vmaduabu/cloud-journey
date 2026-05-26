@@ -53,6 +53,13 @@ app.get("/config", (req, res) => {
   });
 });
 
+app.get("/error-test", (req, res) => {
+  res.status(500).json({
+    status: "error",
+    message: "Internal server error simulation"
+  });
+});
+
 // Start Server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
