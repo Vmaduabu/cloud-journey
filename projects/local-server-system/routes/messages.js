@@ -1,8 +1,11 @@
 const express = require("express");
+const fs = require("fs");
 
 const router = express.Router();
 
-const messages = [];
+const messages = JSON.parse(
+  fs.readFileSync("./data/messages.json")
+);
 
 router.post("/message", (req, res) => {
   if (!req.body || !req.body.name || !req.body.message) {
@@ -13,6 +16,11 @@ router.post("/message", (req, res) => {
   }
 
   messages.push(req.body);
+
+  fs.writeFileSync(
+    "./data/messages.json",
+    JSON.stringify(messages, null, 2)
+  );
 
   res.status(201).json({
     status: "Message stored",

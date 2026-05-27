@@ -222,3 +222,30 @@ Validation protects systems from incomplete or invalid data.
 - APIs should be consistent and organized.
 - Production systems must handle failures gracefully.
 - Backend systems validate incoming requests.
+
+## Project Reflection - Persistent Backend Storage
+
+## What dis I build?
+I updated my backend API to persist message data using JSON file storage.
+
+## What problem did it solve?
+It prevents backend data from disapperaring after server restarts.
+
+## What decisions did I make and why?
+I used file-based storage to introduce persistence concepts before moving into full databses.
+
+## What would I imrpove?
+I would eventually replace JSON file storage with a real database like PostgreSQL or MongoDB.
+
+## May 26 Notes
+
+## Persistence
+Persistence means data survives after backend systems restart.
+
+## File Storage
+Backend systems can read and write data using file system operations.
+
+## What I learned
+- Memory-based storage disappears after restart.
+- Backend systems use persistence to retain data.
+- Node.js can interact with files using fs module
