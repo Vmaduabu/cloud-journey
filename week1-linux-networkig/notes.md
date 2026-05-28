@@ -249,3 +249,33 @@ Backend systems can read and write data using file system operations.
 - Memory-based storage disappears after restart.
 - Backend systems use persistence to retain data.
 - Node.js can interact with files using fs module
+
+# Project Reflection 
+
+## What did I build?
+I seperated backend storage logic into its own database module.
+
+## What problem does it solve?
+It improves backend storage logic into its own datbase.
+
+## What decisions did I make and why?
+I moved database functions into their own file because scalable systems avoid mixing routes, storage, and business logic together.
+
+# What I would improve?
+I would eventually replace JSON storage with Postgre SQL or MongoDB and add asynchrnous database operations.
+
+## May 27 Notes
+
+## Database Architecture
+Production systems seperate storage logic from API route logic.
+ 
+## Persistence Evolution
+Backend systems evolve from memory, to files, to databases.
+
+## Seperation of Responsibility
+Each file should have a clear job. Routes should handle API behavior, while database modules should handle storage operations
+
+## What I Learned
+- Databases solve scalability and persistence problems.
+- Backend systems seperate responsibilities into modules.
+- API routes and storage logic should not be tightly coupled.

@@ -1,11 +1,11 @@
 const express = require("express");
-const fs = require("fs");
+
+const {
+  getMessages,
+  saveMessages
+} = require("../db/database");
 
 const router = express.Router();
-
-const messages = JSON.parse(
-  fs.readFileSync("./data/messages.json")
-);
 
 router.post("/message", (req, res) => {
   if (!req.body || !req.body.name || !req.body.message) {
@@ -15,12 +15,11 @@ router.post("/message", (req, res) => {
     });
   }
 
+  const messages = getMessages();
+
   messages.push(req.body);
 
-  fs.writeFileSync(
-    "./data/messages.json",
-    JSON.stringify(messages, null, 2)
-  );
+  saveMessages(messages);
 
   res.status(201).json({
     status: "Message stored",
@@ -29,6 +28,8 @@ router.post("/message", (req, res) => {
 });
 
 router.get("/messages", (req, res) => {
+  const messages = getMessages();
+
   res.json(messages);
 });
 
