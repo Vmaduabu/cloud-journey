@@ -1,36 +1,36 @@
 const express = require("express");
 
 const {
-  getMessages,
-  saveMessages
+    getMessages,
+    saveMessages
 } = require("../db/database");
 
 const router = express.Router();
 
-router.post("/message", (req, res) => {
-  if (!req.body || !req.body.name || !req.body.message) {
-    return res.status(400).json({
-      status: "error",
-      message: "Name and message are required"
+router.post("/message", async (req, res) => {
+    if (!req.body || !req.body.name || !req.body.message) {
+        return res.status(400).json({
+            status: "error",
+            message: "Name and message are required"
+        });
+    }
+
+    const messages = await getMessages();
+
+    messages.push(req.body);
+
+    await saveMessages(messages);
+
+    res.status(201).json({
+        status: "Message stored",
+        data: messages
     });
-  }
-
-  const messages = getMessages();
-
-  messages.push(req.body);
-
-  saveMessages(messages);
-
-  res.status(201).json({
-    status: "Message stored",
-    data: messages
-  });
 });
 
-router.get("/messages", (req, res) => {
-  const messages = getMessages();
+router.get("/messages", async (req, res) => {
+    const messages = await getMessages();
 
-  res.json(messages);
+    res.json(messages);
 });
 
 module.exports = router;

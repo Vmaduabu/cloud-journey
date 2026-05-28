@@ -1,19 +1,22 @@
-const fs = require("fs");
+const fs = require("fs").promises;
 
-function getMessages() {
-  return JSON.parse(
-    fs.readFileSync("./data/messages.json")
-  );
+async function getMessages() {
+    const data = await fs.readFile(
+        "./data/messages.json",
+        "utf8"
+    );
+
+    return JSON.parse(data);
 }
 
-function saveMessages(messages) {
-  fs.writeFileSync(
-    "./data/messages.json",
-    JSON.stringify(messages, null, 2)
-  );
+async function saveMessages(messages) {
+    await fs.writeFile(
+        "./data/messages.json",
+        JSON.stringify(messages, null, 2)
+    );
 }
 
 module.exports = {
-  getMessages,
-  saveMessages
+    getMessages,
+    saveMessages
 };

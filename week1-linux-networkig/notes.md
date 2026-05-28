@@ -279,3 +279,38 @@ Each file should have a clear job. Routes should handle API behavior, while data
 - Databases solve scalability and persistence problems.
 - Backend systems seperate responsibilities into modules.
 - API routes and storage logic should not be tightly coupled.
+
+## Project Reflection - Async Backend Architecture
+
+## What did I build?
+I converted backend storage operations from synchronous file handling to asynchronous architecture using async/await.
+
+## What problem does it solve?
+It reduces blocking operations and improves backend scalability by allowing the server to handle work more efficiently.
+
+## What decisions did I make and why?
+I swicthed to asynchronous file operations because production systems should avoid blocking the server during storage operations.
+
+## What would I improve?
+I would eventually move from JSON storage into real asynchronous databases like PostgreSQL or MongoDB.
+
+## May 28 Notes 
+
+## Asynchronous Systems
+
+Async systems allow backend operations to run without blocking the server.
+
+## async/await
+
+Modern Node.js backends commonly use async/await to manage asynchronous operations in a readable way.
+
+## Scalability
+
+Blocking operations reduce scalability because the server must wait for tasks to complete before processing other work.
+
+## What I learned
+
+- Synchronous operations block execution.
+- Async systems improve responsiveness.
+- Production systems rely heavily on asynchronous architecture.
+- Backend architecture decisons impact scalability.
