@@ -314,3 +314,93 @@ Blocking operations reduce scalability because the server must wait for tasks to
 - Async systems improve responsiveness.
 - Production systems rely heavily on asynchronous architecture.
 - Backend architecture decisons impact scalability.
+
+## May 29 Notes
+
+## CRUD 
+
+CRUD stands for:
+
+- Create 
+- Read
+- Update
+- Delete
+
+Most backend systems use CRUD operations to manage resources.
+
+Examples:
+- users
+- messages
+- orders
+- products
+
+## Resources
+
+A resource is something an API manages.
+
+Examples:
+- users
+- messages
+- products
+- orders
+
+Resources need unique IDs so they can be individually managed.
+
+## Resource IDS
+
+Examples: 
+- User ID
+- Product ID
+- Order ID
+- Message ID
+
+IDS allow APIs to:
+- retrive specific resources
+- update specific resources 
+- delete specific resources
+
+Without IDs, systems cannot reliably manage individual resources.
+
+--
+
+## Route Parameters
+
+Route parameters allow APIs to target specific resources.
+
+Example:
+
+DELETE /message/123
+
+Express accesses:
+
+req.params.id
+
+This allows the API to identify which specific resource should be modified.
+
+## What I Learned
+
+- APIs manage resources rather than simple collections of data.
+- Resources require unique IDs.
+- Route parameters help APIs target specific resources.
+- CRUD operations form the foundation of most backend systems.
+- DELTE operations remove specific resources using IDs.
+
+# Project Reflection - CRUD Opertions
+
+## What did I build?
+
+I extended my backend API by adding unique IDs and delete functionality for messages.
+
+## What problem does it solve?
+
+It allows resources to be individually managed instead of treating all data as one collection.
+
+## What decisions did I make and Why?
+
+I added IDs beacuse production systems require unique resource identification for update and delete operations.
+
+I used route parameters because they allow APIs to target specific resources.
+
+## What would I improve?
+
+I would eventually add update functionality, database generated IDS, and a real database such as PostgreSQL or MongoDB.

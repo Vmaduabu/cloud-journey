@@ -17,7 +17,13 @@ router.post("/message", async (req, res) => {
 
     const messages = await getMessages();
 
-    messages.push(req.body);
+    const newMessages = {
+        id: Date.now(),
+        name: req.body.name,
+        message: req.body.message
+    };
+
+    messages.push(newMessages);
 
     await saveMessages(messages);
 
@@ -31,6 +37,20 @@ router.get("/messages", async (req, res) => {
     const messages = await getMessages();
 
     res.json(messages);
+});
+
+router.delete("/message/:id", async (req, res) => {
+  const messages = await getMessages();
+
+  const filteredMessages = messages.filter(
+    message => message.id !== Number(req.params.id)
+  );
+
+  await saveMessages(filteredMessages);
+
+  res.json({
+    status: "deleted"
+  });
 });
 
 module.exports = router;
