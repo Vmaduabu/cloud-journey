@@ -8,12 +8,17 @@ const {
 const router = express.Router();
 
 router.post("/message", async (req, res) => {
+
+    console.log("POST /message route hit");
+
     if (!req.body || !req.body.name || !req.body.message) {
         return res.status(400).json({
             status: "error",
             message: "Name and message are required"
         });
     }
+
+    console.log("loading messages from database");
 
     const messages = await getMessages();
 
@@ -25,7 +30,11 @@ router.post("/message", async (req, res) => {
 
     messages.push(newMessages);
 
+    console.log("Saving messages");
+
     await saveMessages(messages);
+
+    console.log("Sending response");
 
     res.status(201).json({
         status: "Message stored",
