@@ -62,4 +62,8 @@ router.delete("/message/:id", async (req, res) => {
   });
 });
 
+router.get("/error", (req, res) => {
+    throw new Error("Simulated server failure");
+});
+
 module.exports = router;
