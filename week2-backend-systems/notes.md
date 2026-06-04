@@ -97,3 +97,64 @@ I used Express error middlware because production systems benefit from centraliz
 ## What I would improve?
 
 I would eventually add structured logging, monitoring, and custom error types.
+
+# June 1 Notes
+
+## Version Control
+
+Version control allows developers to track changes to files over time.
+
+## Git
+
+Git is a distributed version control system used by software teams.
+
+## Repository
+
+A repository contains project files and their revision history.
+
+## Working Directory
+
+The working directory contains files currently being edited.
+
+## Stagging Area 
+
+The stagging area contains changes prepared for a commit.
+
+## Commit 
+
+A commit is a save point in a project's history.
+
+## Git Workflow 
+
+Working Directory 
+- git add
+- Staging Area
+- git commit 
+- Repository History 
+
+## What I Learned
+
+- Git tracks changes to files.
+- Commits act as project checkpoints.
+- The staging area controls what gets commited.
+- Version control helps recover from mistakes.
+
+# Project Reflection - Git Fundamentals
+
+## What did I learn?
+
+I built a simple Git workflow by creating files, tracking changes, stanging those changes, and creating commits.
+
+## What problem did it solve? 
+
+Git solves the problem of losing work and not knowing what changed over time. It allows developers to track project history, recover from mistakes, and safely manage changes.
+
+## What decisions did I make and why? 
+
+I chose to stage files before committing because Git seperates working changes from committed history. This allows developers to control exactly what gets included in each commit.
+
+I also used meaningful commit messages because they make projects easier to understand and maintain.
+
+## What I would improve?
+
+I would learn more advanced Git workflows including branching, merging, pull requests, and collaborative development so I can work effectively on larger projects and with other developers.
