@@ -158,3 +158,68 @@ I also used meaningful commit messages because they make projects easier to unde
 ## What I would improve?
 
 I would learn more advanced Git workflows including branching, merging, pull requests, and collaborative development so I can work effectively on larger projects and with other developers.
+
+## June 2 Notes
+
+## API
+
+An API acts as a messenger between client and server.
+
+## Request 
+
+A request is information sent from a client to a server.
+
+## Response 
+
+A response is information returned from a server to a client.
+
+## HTTP
+
+HTTP is the protocol used for communication between clients and servers. 
+
+# GET
+
+GET request retrieve information.
+
+## POST
+
+POST requests send information 
+
+## Request lifecycle 
+
+Client 
+→ Request
+→ Validation
+→ Business Logic
+→ Response
+→ Client
+
+## Health Endpoint 
+
+Health endpoints allow systems to verify that an application is running correctly.
+
+## What I Learned
+
+- APIs connect clients and servers.
+- Every requests follows a lifecylce.
+- GET retrieves data.
+- POST sends data.
+- Health endpoints are common in cloud environments.
+
+# Project Reflection - APIs and Request Lifecylce 
+
+## What did I build?
+
+I built a health-check API endpoint and traced the complete request lifecycle through my express application.
+
+## What problem did it solve?
+
+The health endpoint allows users and systems to verify that the application is running and responsive.
+
+## What decisions did I make and why?
+
+I used a GET endpoint becasue health checks retrieve information without modifying data. I also returned JSON because it is the standard format used for modern APIs.
+
+## What would I improve?
+
+I would add database checks, dependency checks, and more advanced monitoring functionality to make the health endpoint more useful in production environments.

@@ -18,6 +18,14 @@ router.post("/message", async (req, res) => {
         });
     }
 
+router.get("/health", (req, res) => {
+
+    res.json({
+        status: "healthy"
+    });
+
+});
+
     console.log("loading messages from database");
 
     const messages = await getMessages();
