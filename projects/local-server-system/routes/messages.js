@@ -7,16 +7,28 @@ const {
 
 const router = express.Router();
 
+const requestLogger = (req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+};
+
+router.use(requestLogger);
+
 router.post("/message", async (req, res) => {
 
     console.log("POST /message route hit");
 
-    if (!req.body || !req.body.name || !req.body.message) {
+    if (
+        !req.body ||
+        typeof req.body.name !== "string" ||
+        typeof req.body.message !== "string"
+    ) {
         return res.status(400).json({
             status: "error",
-            message: "Name and message are required"
+            message: "Name and message must be strings"
         });
     }
+    
 
 router.get("/health", (req, res) => {
 
