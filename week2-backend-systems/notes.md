@@ -370,3 +370,101 @@ I would also implement structured logging to make troubleshooting easier in larg
 Applications should not assume everything will work correctly.
 
 Good software is designed to handle failures gracefully while maintaining a positive user experience.
+
+
+# June 5 Notes
+
+## What is Data Persistence?
+
+Data persistence is the ability for an application to save information so that it remains availible even after the application shuts down or restarts.
+
+Without persistence, all information exists only in memory and is lost when the application stops running.
+
+## Why Data Persistence Matters
+
+Most real-world applications need to remember information.
+
+Examples include:
+- User accounts
+- Messages
+- Orders
+- Transactions
+- Product inventories
+
+Persistence allows applications to store this information for future use.
+
+## How Persistence Works In My Project?
+
+My application stores messages inside a JSON fie called:
+
+data/messages.json
+
+When a user submits a message:
+
+1. The application loads existing messages.
+2. A new message is added.
+3. The updated data is written back to the file.
+
+Because the information is stored on disk, it remains available after the application restarts.
+
+## Application Architecture
+
+My project is seperated into three layers:
+
+## Application Layer
+
+messages.js
+
+Responsible for:
+
+- Receiving requests
+- Validating input 
+- Returning responses
+
+### Data Access Layer
+
+database.js
+
+Responisble for:
+
+- Reading data
+- Writing data
+- Managing file operations
+
+### Storage Layer
+
+messages.json
+
+Responsible for:
+
+- Persisting application data
+
+## What I Learned
+
+- Applications need persistent storage to remember information.
+- Data can be stored outside of memory.
+- Seperating app,ication logic from storage logic improves organization.
+- Persistence is a foundational concept used by all databases.
+
+
+# Project Reflection - Data Persistence
+
+## What Did I Build?
+
+I built a system that can store and retrieve messages using persistence file storage. Mesages remain available even after the applications restarts.
+
+## What Problem Did it Solve?
+
+Without persistence, all data would be lost when the server shuts down. Persistent storage allows information to survive application restarts and remain availible for future requests.
+
+## What Decisions Did I Make and Why?
+
+I seperated request handling from data storage by placing file operations in a dedicated database module. This makes the application easier to maintain and follows common software architecture practices.
+
+## What Would I Improve?
+
+I would eventually replace JSON file storage with a real database such as PostgreSQL or Azure SQL. This would improve scalability, performance, and reliability.
+
+## Key Takeaway
+
+Applications need a reliable way to store information outside of memory. Data persistence is the foundation that allows modern applications to remember users, transactions, and business data.
