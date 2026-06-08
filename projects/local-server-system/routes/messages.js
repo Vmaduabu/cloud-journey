@@ -28,37 +28,44 @@ router.post("/message", async (req, res) => {
             message: "Name and message must be strings"
         });
     }
-    
 
-router.get("/health", (req, res) => {
+    try {
+        console.log("loading messages from database");
 
-    res.json({
-        status: "healthy"
-    });
+        const messages = await getMessages();
 
+        const newMessage = {
+            id: Date.now(),
+            name: req.body.name,
+            message: req.body.message
+        };
+
+        messages.push(newMessage);
+
+        console.log("Saving messages");
+
+        await saveMessages(messages);
+
+        console.log("Sending response");
+
+        return res.status(201).json({
+            status: "Message stored",
+            data: messages
+        });
+
+    } catch (error) {
+        console.error("Message Route Error:", error);
+
+        return res.status(500).json({
+            status: "error",
+            message: "Internal server error"
+        });
+    }
 });
 
-    console.log("loading messages from database");
-
-    const messages = await getMessages();
-
-    const newMessages = {
-        id: Date.now(),
-        name: req.body.name,
-        message: req.body.message
-    };
-
-    messages.push(newMessages);
-
-    console.log("Saving messages");
-
-    await saveMessages(messages);
-
-    console.log("Sending response");
-
-    res.status(201).json({
-        status: "Message stored",
-        data: messages
+router.get("/health", (req, res) => {
+    res.json({
+        status: "healthy"
     });
 });
 
@@ -69,17 +76,17 @@ router.get("/messages", async (req, res) => {
 });
 
 router.delete("/message/:id", async (req, res) => {
-  const messages = await getMessages();
+    const messages = await getMessages();
 
-  const filteredMessages = messages.filter(
-    message => message.id !== Number(req.params.id)
-  );
+    const filteredMessages = messages.filter(
+        message => message.id !== Number(req.params.id)
+    );
 
-  await saveMessages(filteredMessages);
+    await saveMessages(filteredMessages);
 
-  res.json({
-    status: "deleted"
-  });
+    res.json({
+        status: "deleted"
+    });
 });
 
 router.get("/error", (req, res) => {

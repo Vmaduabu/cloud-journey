@@ -42,5 +42,10 @@
     "id": 1780678732610,
     "name": "Victor",
     "message": "Learning middleware"
+  },
+  {
+    "id": 1780871758545,
+    "name": "Victor",
+    "message": "Testing error handling"
   }
 ]

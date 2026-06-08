@@ -223,3 +223,150 @@ I used a GET endpoint becasue health checks retrieve information without modifyi
 ## What would I improve?
 
 I would add database checks, dependency checks, and more advanced monitoring functionality to make the health endpoint more useful in production environments.
+
+
+# June 3 Notes
+
+## Middleware
+
+Middleware is code that runs before route logic.
+
+## next()
+
+next() tells Express to continue processing the request.
+
+## Validation
+
+Validation checks whether incoming data is acceptable before the application uses it.
+
+## Logging Middlware
+
+Logging middleware records incoming requests so developers can see what is happening inside this application.
+
+# Request Lifecycle
+
+Client
+→ Request
+→ Middleware
+→ Validation
+→ Route Logic
+→ Response
+→ Client
+
+## What I learned
+
+- Middleware runs before route logic.
+- next() allows the request to continue
+- Validation protects the application from bad input
+- Logging helps developers understand request activity.
+- Good APIs handle both valid and invalid requests.
+
+#  Project Reflection - Middleware & Validation 
+
+## What did I build?
+
+I built custom middleware that logs incoming requests and improved validation for my API endpoints. I also tested both sucessful and failed requests to verify the middleware and validation correctly.
+
+## What problem did it solve?
+
+Middleware allows requests to be processed before reaching route logic, while validation prevents invalid data from entering the application. Together they make the API more reliable and secure.
+
+## What decisions did I make and why?
+
+I added logging middleware because it provides visibility into incoming traffic and helps with debugging. I also improved validation by checking data types instead of only checking if values existed. This prevents invalid requests from being processed by the application.
+
+## What I would Improve?
+
+I would move middleware into its own file so it can be resued across multiple routes. I would create centralized validation middleware to avoid repeating validation logic throughout the application.
+
+# June 4 Notes
+
+## What is Error Handling?
+
+Error Handling allows an application to contuinue operating when unexpected problems occur. Instead of crashing, the application can recognize a problem, log useful information for developers, and return a safe response to the user.
+
+## Why Error Handling Matters?
+
+Every application will eventually encounter unexpected situations. Files may be missing, services may become unavalible, or data may become corrupted. Good applications are designed to handle these situations gracefully rather than failing completely.
+
+## What is a Validation Error?
+
+A validation error occurs when user provides data that does not meet the applications requirements.
+
+Example: 
+
+A user submits a number instead of name.
+
+Result:
+
+The applications return a 400-level error because the bad request itself is invalid.
+
+## What is a Server Error?
+
+A server error occurs when submitting something unexpected happens inside the application.
+
+Examples: 
+
+- A file cannot be loaded
+- A database connection fails
+- A service becomes unavailible
+
+Result:
+
+The application returns a 500-level error because the server encountered an internal problem.
+
+## Logging Errors
+
+Logging records technical details about failures so developers can troublshoot problems. Users should receive a simple message while developers receive detailed information through logs.
+
+## How It Was Used In My Project
+
+I added a try/catch bock to my POST /message route. This allows the application to safely handle unexpected failures when loading or saving message data.
+
+The application now: 
+
+1. Validates incoming requests
+2. Processes valid requests 
+3. Catches unexpected errors
+4. Logs technical details
+5. Returns a safe response to the user
+
+## What I Learned
+
+I learned that applications should be designed to fail gracefully. Error handling improves reliability, protects the user experience, and makes troubleshooting significantly easier for developers.
+
+# Project Reflection - Error Handling & Debugging 
+
+## What Did I Build?
+
+I improved the reliability of my API by implemnting error handling inside the POST /message route.
+
+The route can now safely handle unexpected failures while continuing to provide meaningful responses to users.
+
+## What Problem Did it Solve?
+
+Without error handling, an unexpected failure could cause the route to stop working or expose technical details to users.
+
+By implementing a try/catch block, the application can safely handle errors and return a consistent response when something goes wrong.
+
+## What Decisions Did I Make And Why?
+
+I chose to seperate validation errors from server errors.
+
+Validation errors occur when a user submits invalid data and return a 400-level response.
+
+Server errors occur when the application encounters an unexpected problem and return a 500-level response.
+
+I also chose to log detailed error information for developers while returning a simple error message to users.
+
+## What Would I Improve?
+
+I would move error handling into a centralized solution so that multiple routes can share the same error-handling logic.
+
+I would also implement structured logging to make troubleshooting easier in larger applications.
+
+## Key Takeaway
+
+Applications should not assume everything will work correctly.
+
+Good software is designed to handle failures gracefully while maintaining a positive user experience.
