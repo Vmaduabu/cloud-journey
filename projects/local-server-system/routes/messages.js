@@ -1,3 +1,4 @@
+const config = require("../config/config");
 const express = require("express");
 
 const {
@@ -65,7 +66,9 @@ router.post("/message", async (req, res) => {
 
 router.get("/health", (req, res) => {
     res.json({
-        status: "healthy"
+        status: "healthy",
+        application: config.appName,
+        version: config.version
     });
 });
 

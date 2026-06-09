@@ -549,3 +549,72 @@ I would also introduce additional layers such as services and database integrati
 Applications become easier to maintain, debug, and scale when responsibilities are clearly separated.
 
 Good architecture is not about writing more code. it is about organizing the code so it remains understandable as complexity grows.
+
+
+# June 7 Notes
+
+## What is Configuration?
+
+Configuration is the process of strong application settings in a central loaction rather than hardcoding them throughout the codebase.
+
+Examples include:
+
+- Application names
+- Version numbers
+- Database connections
+- API URLs
+- Environment settings
+
+# Why Confuguration Matters
+
+Applications often run multiple environments such as development, testing, and production.
+
+Keeping configuration seperate allows developers to change settings without modifying application logic.
+
+## How it Was Used In My Project
+
+I created a dedicated configuration module that stores application metadata such as the application name and version.
+
+My routes now retrieve configuration values from a central location instead of hardcoding them directly into the application.
+
+## Benefits
+
+- Easier maintenance
+- Better scalability
+- Cleaner architecture 
+- Reduced duplication
+
+## What I Learned
+
+Configuration should be seperated from business from business logic whenever possible.
+
+A centralized configuration system makes applications easier to manage and prepares them for larger deployments.
+
+# Project Reflection - Configuration Management
+
+## What Did I Build?
+
+I created a centralized configuration module that stores application settings and metadata.
+
+The application can now access configuration values from a single location rather than duplicating them throughout codebase.
+
+## What Problem Did It Solve?
+
+Hardcoded values create maintenance challenges and make applications more difficult to update.
+
+Centralized configuration allows settings to be modified without changing business logic.
+
+## What Decisions Did I Make And Why?
+
+I chose to store application settings in a dedicated configuration file because it seperates configuration from application behavior.
+
+This follows common software engineering practices and improves maintanbility.
+
+## What I Would Improve?
+
+As the application grows, I would intoduce environmental variables
+for sensitive information and support seperate configurations for development, testing, and production environments.
+
+## Key Takeaway 
+
+Applications become easier to maintain when configuration is managed separately from business logic.
