@@ -468,3 +468,84 @@ I would eventually replace JSON file storage with a real database such as Postgr
 ## Key Takeaway
 
 Applications need a reliable way to store information outside of memory. Data persistence is the foundation that allows modern applications to remember users, transactions, and business data.
+
+# June 6 Notes
+
+## What Is Seperation Of Concerns?
+
+Seperation of concerns is a softrware design principle that divides an application into smaller parts, with each part having a specific responsibility.
+
+This makes applications easier to understand, maintain, test, and scale.
+
+## Why Seperation of Concerns Matters
+
+As applications grow, complexity increses.
+
+Keeping responsibilities seperated prevents files from becoming difficult to maintain and reduces the risk of introducing bugs when making changes.
+
+## How It Was Used In My Project
+
+My application is divided into three layers:
+
+### Application Layer
+
+messages.js
+
+Responsible for:
+
+- Handling requests 
+- Validating input 
+- Returning responses 
+
+### Data Access Layer
+
+database.js 
+
+Responsible for: 
+
+- Storing application data 
+
+## Benefits 
+
+- Easier debugging 
+- Easier maintenance 
+- Cleaner organiozation
+- Better Scalability
+
+## What I Learned 
+
+Applications become easier to maintain when responsibilities are clearly seperated.
+
+A well-structured project allows develoeprs to focus on one area of the system without impacting unrelated functionality.
+
+# Project Reflection - Seperation of Concerns
+
+## What Did Build?
+
+I organized into multiple layers with clearly defined responsibilities
+
+The application layer handles requests and responses, the data access layer manages persistence operations, and the storage layer holds application data.
+
+## What Problem Did It Solve?
+
+Seperating responsibilities makes the application easier to understand and maintain.
+
+Instead of placing all logic inside a single file, each part of the system has a specific purpose.
+
+## What Decisions Did I Make And Why?
+
+I chose to seperate request handling, data access, and storage into different files.
+
+This makes the codebase more organized and reduces the likelihood of changes in one area affecting unrelated functionality.
+
+## What Would I Improve?
+
+As the application grows, I would continue seperating responsibilities into dedicated modules.
+
+I would also introduce additional layers such as services and database integrations to support larger systems.
+
+## Key Takeaway
+
+Applications become easier to maintain, debug, and scale when responsibilities are clearly separated.
+
+Good architecture is not about writing more code. it is about organizing the code so it remains understandable as complexity grows.
