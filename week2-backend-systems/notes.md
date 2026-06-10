@@ -618,3 +618,58 @@ for sensitive information and support seperate configurations for development, t
 ## Key Takeaway 
 
 Applications become easier to maintain when configuration is managed separately from business logic.
+
+
+# June 8 Notes
+
+## What Is System Thinking 
+
+System thinking focuses on understanding how different parts of an application work together rather thean viewing each component individually.
+
+## Why System Thinking Matters
+
+Applications are made of multiple connected layers. Understanding how requests move through these layers help developers troubleshoot problems and design better systems.
+
+## How It was Used In My Project
+
+My application contains:
+
+- Presentation Layer
+- Business Logic Layer
+- Data Access Layer
+- Storage Layer
+
+Each layer perfroms a specific responsibility and contributes to overall request flow.
+
+## Benefits
+
+- Easier troubleshooting
+- Better architecture decisions
+- Improved scalability
+- Clearer understanding of dependencies 
+
+## What I Learned
+
+Applications are systems made of interconnected components. Understanding how those components interact is just as important as understanding the code itself.
+
+# Project Reflection - System Thinking 
+
+## WHat Did I Build?
+
+I mapped the complete request lifecycle of my application and identified the responsibilities of each layer.
+
+## What Problem Did It Solve?
+
+Understanding the request lifecycle makes it easier troubleshoot issues, understand dependencies, and improve application design.
+
+## What Decisions Did I Make And Why?
+
+I seperated responsibilities across multiple files and layers to improve maintainability and reduce complexity.
+
+## What Would I Improve?
+
+As the application grows, I would continue seperating responsibilities into dedicated modules and services.
+
+## Key Takeaway
+
+Software is not just code. Software is a collection of systems working together to deliver functionality.
