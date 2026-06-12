@@ -739,3 +739,59 @@ As the application grows, I would create architecture diagrams and dependency do
 Software development is not just about writing code.
 
 It is about understanding how changes affect the existing system.
+
+
+# June 10 Notes
+
+## What IS REST API Design?
+
+REST API is the processof creating consistent and predictable endpoints that allow systems to communicate.
+
+## Why REST Design Matters
+
+Well-designed APIS are easier to understand, maintain, and integrate with.
+
+Consistency improves developer experience and reduces mistakes.
+
+## How It Was Used In My Project
+
+I reviewed endpoint naming conventions, HTTP methods, status codes, and API documentation.
+
+I evaluated how resources should be structured and how endpoints should be named.
+
+## Benefits
+
+- Easier maintenance
+- Better developer experience
+- Improved scalability
+- Better communication between systems
+
+## What I Learned 
+
+Build an API is different from designing an API.
+
+Good API design focuses on consistency, clarity, and long-term maintainability.
+
+# Project Refelction - REST API Design
+
+## What Did I Build?
+
+I reviewed and documented the API endpoints within my application.
+
+## What Problem Did It Solve?
+
+Documentation and consistent design make APIs easier to understand and use.
+
+## What Decisions Did I Make And Why?
+
+I evaluated endpoint naming conventions and status code usage to improve consistency.
+
+## What Would I Improve?
+
+As the project grows, I would version the API and expand documentation.
+
+## Key Takeway 
+
+A working API is not automatically a well-designed API.
+
+Good API design improves usability and maintanbility.
