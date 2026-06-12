@@ -1,0 +1,23 @@
+Client submits request
+↓
+Express receives request
+↓
+requestLogger logs request
+↓
+Validation checks request
+↓
+try block begins
+↓
+database.js loads messages
+↓
+messages.json read from disk
+↓
+new message added
+↓
+database.js saves messages
+↓
+messages.json updated
+↓
+success response returned
+↓
+client receives response

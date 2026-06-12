@@ -38,7 +38,8 @@ router.post("/message", async (req, res) => {
         const newMessage = {
             id: Date.now(),
             name: req.body.name,
-            message: req.body.message
+            message: req.body.message,
+            timestamp: new Date().toISOString()
         };
 
         messages.push(newMessage);

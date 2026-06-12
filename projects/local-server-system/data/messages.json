@@ -47,5 +47,11 @@
     "id": 1780871758545,
     "name": "Victor",
     "message": "Testing error handling"
+  },
+  {
+    "id": 1781218392436,
+    "name": "Victor",
+    "message": "Testing timestamp",
+    "timestamp": "2026-06-11T22:53:12.436Z"
   }
 ]

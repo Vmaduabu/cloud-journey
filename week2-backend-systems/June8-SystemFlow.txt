@@ -1,0 +1,23 @@
+Client
+↓
+POST /message
+↓
+requestLogger Middleware
+↓
+Validation
+↓
+Try/Catch
+↓
+getMessages()
+↓
+database.js
+↓
+messages.json
+↓
+saveMessages()
+↓
+database.js
+↓
+Response Sent
+↓
+Client

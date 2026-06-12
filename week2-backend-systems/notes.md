@@ -673,3 +673,69 @@ As the application grows, I would continue seperating responsibilities into dedi
 ## Key Takeaway
 
 Software is not just code. Software is a collection of systems working together to deliver functionality.
+
+# June 9 Notes
+
+## What Is Change Impact Analysis?
+
+Change impact analysis is the process of determining which parts of the system will be affected by a proposed change before modifying the application.
+
+## Why Change Impact Analysis Matters
+
+As applications grow, even small changes can affect multiple components.
+
+Understanding system dependencies helps developers make safer changes and reduce the risk of introducing bugs.
+
+## How It was Used in My Project 
+
+I added a timestamp field to stored messages.
+
+The direct code change happened in messages.js because that file creates the message object.
+
+database.js was impacted because it reads and writes the updated data structure, but it did not need to be modified.
+
+messages.json was impacted because newly saved messages now contain timestamp information.
+
+config.js was not impacted because timestamps are unrelated to application configuration.
+
+# Benefits
+
+- Safer changes
+- Better planning
+- Easier maintenance
+- Improved system understanding
+
+## What I Learned
+
+Modified and impacted are not the same thing.
+
+A file can be affected by a change without requiring code modifications.
+
+Good engineers think about system impact before writing code.
+
+
+# Project Reflection - Change Impact Analysis
+
+# What Did I Build?
+
+I extended the application by adding timestamps to stored messages and analyzed how that change affected the system.
+
+## What Problem Did it Solve?
+
+The application can now track when messages were created, providing additional context and improving data quality.
+
+# WHat Decisions Did I make and Why?
+
+Before mankign changes, I identified which files would be most modified and which parts of the system would be affected.
+
+This helped ensure the feature could be added safely without introducing unnecessary complexity.
+
+## What Would I Improve?
+
+As the application grows, I would create architecture diagrams and dependency documentation to make future changes easier to evaluate.
+
+## Key Takeway 
+
+Software development is not just about writing code.
+
+It is about understanding how changes affect the existing system.

@@ -1,0 +1,29 @@
+Scenario 1:
+
+messages.json delted
+
+Application cannot load messages.
+
+database.js fails.
+
+try/catch returns server error.
+
+
+Scenario 2:
+
+database.js broken 
+
+Application cannot access data.
+
+routes fail.
+
+server returns errors.
+
+
+Scenario 3:
+
+Result:
+
+- Invalid data reaches application.
+- Data quality decreases.
+- Potential bugs increase
