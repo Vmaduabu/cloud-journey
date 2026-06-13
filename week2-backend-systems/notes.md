@@ -845,3 +845,75 @@ Design decisions made today can impact future maintainability.
 Good enginners build today's requirements.
 
 Great enginners think about tomorrow's changes.
+
+
+# June 12 Refractor Review 
+
+# What Went Well
+
+- Clear route structure 
+- Validation exists
+- Error hanjdling exists
+- Persistence works
+
+## Potential Improvements
+
+- Improve endpoint consistency
+- Continue improving documentation
+- Add automated testing in future projects
+
+## Key Observation
+
+Working code and maintanable code are not always the same thing.
+
+Developers should periodically review code quality even when the application functions correctly.
+
+
+# June 12 Notes 
+
+# What Is Refractoring?
+
+Refractoring is the process of improving code structure without changing application behavior.
+
+## Why Refractoring Matters
+
+As applications grow, code becomes harder to maintain.
+
+Refractoring improves readability, maintainability, and long-term scalability.
+
+## How It Was Used In My Project
+
+I reviewed my API routes, naming conventions, error handling, and overall stucture.
+
+I identified areas where future improvements could be made without changing functionality.
+
+# Benefits 
+
+- Easier maintenance
+- Better readability
+- Reduced technical debt
+- Improved devloper experience
+
+# What I Learned
+
+Code quality matters.
+
+Applications should not only work correctly but also be understandable to future developers.
+
+# Project Reflection - Refractoring
+
+# What Did I Learn?
+
+I learned that code review and refractoring are important parts of software devlopment.
+
+## Why Does it Matter?
+
+Software is maintained for years.
+
+Readable and maintainable code reduces future developmental costs.
+
+## Key Takeway
+
+Good software is not only functional.
+
+It is also understandable and maintainable.
