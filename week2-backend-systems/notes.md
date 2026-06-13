@@ -795,3 +795,53 @@ As the project grows, I would version the API and expand documentation.
 A working API is not automatically a well-designed API.
 
 Good API design improves usability and maintanbility.
+
+
+# June 11 Notes
+
+## What Is API Versioning?
+
+
+API versioning is the practice of creating new versions of an API without breaking existing users.
+
+Breaking changes can cause failures in systems that rely on older versions.
+
+## How It Relates To My Project 
+
+My project currently uses a simple API structure.
+
+As the application grows, versioning could allow new functionality to be introduced while preserving compatibility.
+
+## Benefits
+
+- Safer upgrades
+- Better maintainability
+- Reduced Risk
+- Improved Scalability
+
+## What I Learned
+
+Systems should be designed with future change in mind.
+
+Good architecture makes growth eaiser.
+
+
+# Project Reflection - API Versioning 
+
+## What Did I Learn?
+
+I learned that APIs are contracts between systems.
+
+Changes to an API can affect applications that depend on it.
+
+## Why Does this Matter?
+
+Systems often live for years.
+
+Design decisions made today can impact future maintainability.
+
+## Key Takeways
+
+Good enginners build today's requirements.
+
+Great enginners think about tomorrow's changes.
