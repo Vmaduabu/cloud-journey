@@ -917,3 +917,19 @@ Readable and maintainable code reduces future developmental costs.
 Good software is not only functional.
 
 It is also understandable and maintainable.
+
+# June 13 Notes
+
+## Why Testing Matters
+
+Testing verifies that systems behave as expected under normal and abnormal conditions.
+
+## Business Impact
+
+Reliable systems reduce operational disruptions, improve user trust, and lower support costs.
+
+## What I Learned
+
+A feature is not complete until it has been tested.
+
+Testing helps organiozations identify issues before users encounter them.

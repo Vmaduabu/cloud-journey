@@ -79,6 +79,23 @@ router.get("/messages", async (req, res) => {
     res.json(messages);
 });
 
+router.get("/messages/:id", async (req, res) => {
+    const messages = await getMessages();
+
+    const message = messages.find(
+        message => message.id === Number(req.params.id)
+    );
+
+    if (!message) {
+        return res.status(404).json({
+            status: "error",
+            message: "Message not found"
+        });
+    }
+
+    res.json(message);
+});
+
 router.delete("/message/:id", async (req, res) => {
     const messages = await getMessages();
 
