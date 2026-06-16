@@ -933,3 +933,20 @@ Reliable systems reduce operational disruptions, improve user trust, and lower s
 A feature is not complete until it has been tested.
 
 Testing helps organiozations identify issues before users encounter them.
+
+
+# June 14 
+
+## Why Documentation Matters
+
+Documentation allows knowledge to be trasnferred across teams reduces onboarding time for future developers.
+
+## Business Impact
+
+Strong documentation improves maintainability, reduces operational risk, and helps organizations scale systems more effectively.
+
+## Key Lesson
+
+Software is not complete when the code works.
+
+Software is complete when other people can understand, use, and maintain it.
