@@ -950,3 +950,40 @@ Strong documentation improves maintainability, reduces operational risk, and hel
 Software is not complete when the code works.
 
 Software is complete when other people can understand, use, and maintain it.
+
+
+# June 15
+
+## System Flow
+
+Client Request
+↓
+Express Route
+↓
+Validation
+↓
+Database Access
+↓
+Response
+
+## Business Impact
+
+Technology exists to support business operations.
+
+The value of software is not the technology itself, but the business outcomes it enables.
+
+## Key Lesson
+
+Every technical decision should connect back to a business outcome such as reliability, efficeincy, accessibility, scalability, or risk reduction.
+
+#### What problem does this project solve?
+
+The project provides a structured way to store, retrieve, and manage information.
+
+### Who benefits?
+
+Businesses, users, and administrators who need reliable access to information.
+
+### What happens if the system does not exist?
+
+Information must be managed manually, increasing inefficiency, inconsistency, and operational risk.
