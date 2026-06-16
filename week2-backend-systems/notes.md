@@ -987,3 +987,53 @@ Businesses, users, and administrators who need reliable access to information.
 ### What happens if the system does not exist?
 
 Information must be managed manually, increasing inefficiency, inconsistency, and operational risk.
+
+
+# June 16 
+
+# Project Completion Review 
+
+Project 1 demonstrates how backend systems collect, store, retrieve, and manage information.
+
+## Key Business Outcomes
+
+- Improved accessibility
+- Improved reliability
+- Improved data quality
+- Reduced operational risk
+
+## Key Technical Skills
+
+- Node.js
+- Express
+- Routing
+- REST APIs
+- Validation
+- Error Handling
+- Git
+- Documentation
+
+### Biggest Lesson
+
+Technology should always connect back to business outcomes.
+
+The value of software comes from the problems it solves, not the technologies used to build it.
+
+
+## Project 1 Retrospective
+
+# What Went Well?
+
+I successfully built a working backend application that allows users to create, store, retrieve, and manage information. As the project progressed, I was able to add validation, error handling, testing, and documentation, which made the system more reliable and easier to maintain.
+
+# What Was Difficult?
+
+The most challenging part was understanding how all the pieces of the application worked together. Learning how requests, validation, data storage, and responses connect required a lot of troubleshooting and problem-solving throughout the project.
+
+# What Would You Improve If Starting Over?
+
+If I were starting over, I would spend more time planning the system architecture and documentation before writing code. Having a clearer plan from the beginning would have reduced rework and made development more efficient.
+
+# What Skills Did You Gain?
+
+I gained experience in backend development, API design, testing, debugging, documentation, and version control. I also improved my problem-solving skills and learned how technology solutions can support business needs by improving reliability, accessibility, and efficiency.
