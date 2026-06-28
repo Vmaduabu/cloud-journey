@@ -8,29 +8,39 @@ Design and build an enterprise-style Microsoft Azure environment that demonstrat
 
 ## Scenario
 
-"Cactus Manufacturing" is a fictional mid-sized manufacturing company modernizing its on-premises infrastructure by migrating core services to Microsoft Azure.
+Cactus Manufacturing is a fictional mid-sized manufacturing company migrating its on-premises infrastructure to Microsoft Azure.
 
-This project simulates how an IT infrastructure team would design, deploy, and manage a secure Azure environment capable of supporting future business applications.
+This project simulates how an infrastructure team would design, deploy, and manage a secure Azure environment capable of supporting business applications as the company grows.
+
+---
+
+## Business Objectives
+
+- Build a secure cloud environment.
+- Create a scalable network architecture.
+- Organize Azure resources using enterprise best practices.
+- Prepare the environment for identity, monitoring, storage, and compute.
+- Document design decisions throughout the project.
 
 ---
 
 ## Project Goals
 
-- Learn Azure infrastructure fundamentals
-- Build an enterprise-style cloud environment
-- Implement networking and identity best practices
-- Gain hands-on Azure administration experience
-- Document architectural decisions
-- Build a portfolio project representative of real-world cloud engineering
+- Learn Azure infrastructure fundamentals.
+- Build an enterprise-style Azure environment.
+- Gain hands-on Azure administration experience.
+- Follow enterprise cloud design principles.
+- Document architectural decisions.
+- Build a portfolio project representative of real-world cloud engineering.
 
 ---
 
 ## Technologies
 
 - Microsoft Azure
-- Microsoft Entra ID
 - Azure Resource Groups
-- Azure Virtual Network *(Upcoming)*
+- Azure Virtual Network
+- Microsoft Entra ID *(Upcoming)*
 - Azure Virtual Machines *(Upcoming)*
 - Azure Storage *(Upcoming)*
 - Azure Monitor *(Upcoming)*
@@ -48,7 +58,7 @@ This project simulates how an IT infrastructure team would design, deploy, and m
 - Identity & Access Management
 - Cloud Security
 - Infrastructure Documentation
-- Enterprise Architecture Thinking
+- Enterprise Architecture
 - Resource Organization
 
 ---
@@ -59,6 +69,10 @@ This project simulates how an IT infrastructure team would design, deploy, and m
 Azure Subscription
 │
 └── RG-Cactus-Production
+    │
+    └── VNET-Cactus-Production
+        │
+        └── AppSubnet
 ```
 
 Additional infrastructure will be added throughout the project.
@@ -73,26 +87,28 @@ Additional infrastructure will be added throughout the project.
 - Cost Management Budget Configured
 - Budget Alerts Configured
 - Explored Azure Portal
-- Created Resource Group (`RG-Cactus-Production`)
+- Created Resource Group (RG-Cactus-Production)
 - Established enterprise naming convention
+- Created Azure Virtual Network (VNET-Cactus-Production)
+- Configured address space (10.0.0.0/16)
+- Created Application Subnet (AppSubnet)
 - Initialized GitHub repository
 - Completed Day 1 documentation
 - Completed Day 2 documentation
+- Completed Day 3 documentation
 
 ### In Progress
 
-- Azure Networking
-- Virtual Network Design
-- Enterprise Infrastructure Planning
+- Enterprise Infrastructure Expansion
+- Network Security Planning
 
 ### Upcoming
 
-- Virtual Networks
-- Subnets
 - Network Security Groups
-- Storage Accounts
-- Virtual Machines
-- Microsoft Entra ID Configuration
+- Additional Subnets
+- Azure Virtual Machines
+- Azure Storage Accounts
+- Microsoft Entra ID
 - Azure Monitor
 - Cloud Security Controls
 - Infrastructure Automation
@@ -108,7 +124,15 @@ project-2-azure-infrastructure/
 ├── README.md
 ├── notes/
 │   ├── day-1-cloud-fundamentals.md
-│   └── day-2-resource-groups.md
+│   ├── day-2-resource-groups.md
+│   └── day-3-virtual-networks.md
+│
+├── screenshots/
+│   ├── day2-resource-group.png
+│   ├── day3-vnet-overview.png
+│   ├── day3-app-subnet.png
+│   └── day3-resource-group.png
+│
 └── diagrams/
 ```
 
@@ -116,22 +140,26 @@ project-2-azure-infrastructure/
 
 ## Learning Objectives
 
-By the completion of this project I will be able to:
+By the end of this project I will be able to:
 
 - Organize Azure resources using enterprise best practices.
+- Design and deploy secure Azure virtual networks.
 - Deploy and manage Azure infrastructure.
-- Design secure virtual networks.
 - Configure identity and access management.
 - Monitor Azure resources.
 - Document enterprise cloud environments.
-- Explain the architectural decisions behind the deployment.
+- Explain the reasoning behind architectural decisions.
 
 ---
 
 ## Status
 
- **Active Development**
+Active Development
 
-**Current Milestone:** Azure Resource Organization Complete
+Current Milestone
 
-**Next Milestone:** Design and deploy an enterprise virtual network.
+Enterprise Network Foundation Complete
+
+Next Milestone
+
+Deploy and configure Azure Network Security Groups.
