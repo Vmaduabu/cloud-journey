@@ -42,7 +42,7 @@ This project simulates how an infrastructure team would design, deploy, and mana
 - Azure Virtual Network
 - Microsoft Entra ID *(Upcoming)*
 - Azure Virtual Machines
-- Azure Storage *(Upcoming)*
+- Azure Storage 
 - Azure Monitor *(Upcoming)*
 - Git
 - GitHub
@@ -71,12 +71,13 @@ Azure Subscription
 └── RG-Cactus-Production
     │
     ├── VNET-Cactus-Production
-    │   │
     │   └── AppSubnet
-    │   │
-    │   └── NSG-AppSubnet
     │
-    └── VM-App01
+    ├── NSG-AppSubnet
+    │
+    ├── VM-App01
+    │
+    └── StorageAccount01
 ```
 
 Additional infrastructure will be added throughout the project.
@@ -107,7 +108,9 @@ Additional infrastructure will be added throughout the project.
 - Connected VM to AppSubnet
 - Deployed first compute resource
 - Completed Day 5 documentation
-
+- Created Azure Storage Account
+- Added centralized cloud storage 
+- Completed Day 6 documentation
 ### In Progress
 
 - Enterprise Infrastructure Expansion
