@@ -70,9 +70,11 @@ Azure Subscription
 │
 └── RG-Cactus-Production
     │
-    └── VNET-Cactus-Production
-        │
-        └── AppSubnet
+    ├── VNET-Cactus-Production
+    │   │
+    │   └── AppSubnet
+    │        │
+    │        └── NSG-AppSubnet
 ```
 
 Additional infrastructure will be added throughout the project.
@@ -96,6 +98,9 @@ Additional infrastructure will be added throughout the project.
 - Completed Day 1 documentation
 - Completed Day 2 documentation
 - Completed Day 3 documentation
+- Created Network Security Group (NSG-AppSubnet)
+- Associated NSG with AppSubnet
+- Completed Day 4 documentation
 
 ### In Progress
 
