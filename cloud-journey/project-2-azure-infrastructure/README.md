@@ -41,7 +41,7 @@ This project simulates how an infrastructure team would design, deploy, and mana
 - Azure Resource Groups
 - Azure Virtual Network
 - Microsoft Entra ID *(Upcoming)*
-- Azure Virtual Machines *(Upcoming)*
+- Azure Virtual Machines
 - Azure Storage *(Upcoming)*
 - Azure Monitor *(Upcoming)*
 - Git
@@ -73,8 +73,10 @@ Azure Subscription
     ├── VNET-Cactus-Production
     │   │
     │   └── AppSubnet
-    │        │
-    │        └── NSG-AppSubnet
+    │   │
+    │   └── NSG-AppSubnet
+    │
+    └── VM-App01
 ```
 
 Additional infrastructure will be added throughout the project.
@@ -101,6 +103,10 @@ Additional infrastructure will be added throughout the project.
 - Created Network Security Group (NSG-AppSubnet)
 - Associated NSG with AppSubnet
 - Completed Day 4 documentation
+- Created Azure Virtual Machine (VM-App01)
+- Connected VM to AppSubnet
+- Deployed first compute resource
+- Completed Day 5 documentation
 
 ### In Progress
 
