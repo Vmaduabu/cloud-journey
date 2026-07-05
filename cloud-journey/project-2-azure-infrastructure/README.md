@@ -136,16 +136,33 @@ Additional infrastructure will be added throughout the project.
 project-2-azure-infrastructure/
 │
 ├── README.md
+│
 ├── notes/
 │   ├── day-1-cloud-fundamentals.md
 │   ├── day-2-resource-groups.md
-│   └── day-3-virtual-networks.md
+│   ├── day-3-virtual-networks.md
+│   ├── day-4-network-security-groups.md
+│   ├── day-5-virtual-machines.md
+│   └── day-6-storage-accounts.md
 │
 ├── screenshots/
 │   ├── day2-resource-group.png
+│   │
 │   ├── day3-vnet-overview.png
 │   ├── day3-app-subnet.png
-│   └── day3-resource-group.png
+│   ├── day3-resource-group.png
+│   │
+│   ├── day4-nsg-overview.png
+│   ├── day4-default-inbound-rules.png
+│   ├── day4-subnet-association.png
+│   │
+│   ├── day5-vm-overview.png
+│   ├── day5-networking.png
+│   ├── day5-resource-group.png
+│   │
+│   ├── day6-storage-overview.png
+│   ├── day6-storage-containers.png
+│   └── day6-resource-group.png
 │
 └── diagrams/
 ```
