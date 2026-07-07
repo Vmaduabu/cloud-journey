@@ -44,6 +44,7 @@ This project simulates how an infrastructure team would design, deploy, and mana
 - Azure Virtual Machines
 - Azure Storage 
 - Azure Monitor *(Upcoming)*
+-Azure Role-Based Access Control (RBAC)
 - Git
 - GitHub
 - Markdown
@@ -111,6 +112,9 @@ Additional infrastructure will be added throughout the project.
 - Created Azure Storage Account
 - Added centralized cloud storage 
 - Completed Day 6 documentation
+- Configured Azure Role-Based Access Control
+- Assigned Virtual Machine Contributor role
+- Completed Day 7 documentation
 ### In Progress
 
 - Enterprise Infrastructure Expansion
@@ -144,6 +148,7 @@ project-2-azure-infrastructure/
 │   ├── day-4-network-security-groups.md
 │   ├── day-5-virtual-machines.md
 │   └── day-6-storage-accounts.md
+│   └── day-7-identity-access-management.md
 │
 ├── screenshots/
 │   ├── day2-resource-group.png
@@ -163,6 +168,9 @@ project-2-azure-infrastructure/
 │   ├── day6-storage-overview.png
 │   ├── day6-storage-containers.png
 │   └── day6-resource-group.png
+│   ├── day7-iam-overview.png
+│   ├── day7-role-assignment.png
+│   └── day7-built-in-roles.png
 │
 └── diagrams/
 ```
