@@ -43,7 +43,9 @@ This project simulates how an infrastructure team would design, deploy, and mana
 - Microsoft Entra ID *(Upcoming)*
 - Azure Virtual Machines
 - Azure Storage 
-- Azure Monitor *(Upcoming)*
+- Azure Monitor 
+- Log Analytics
+- Azure 
 -Azure Role-Based Access Control (RBAC)
 - Git
 - GitHub
@@ -69,16 +71,23 @@ This project simulates how an infrastructure team would design, deploy, and mana
 ```text
 Azure Subscription
 │
+├── Activity Log
+│   │
+│   └── DS-Subscription-ActivityLog
+│       │
+│       └── LAW-Cactus-Production
+│
 └── RG-Cactus-Production
     │
     ├── VNET-Cactus-Production
+    │   │
     │   └── AppSubnet
-    │
-    ├── NSG-AppSubnet
+    │       │
+    │       └── NSG-AppSubnet
     │
     ├── VM-App01
-    │
-    └── StorageAccount01
+    ├── stcactusprod01
+    └── LAW-Cactus-Production
 ```
 
 Additional infrastructure will be added throughout the project.
@@ -115,20 +124,20 @@ Additional infrastructure will be added throughout the project.
 - Configured Azure Role-Based Access Control
 - Assigned Virtual Machine Contributor role
 - Completed Day 7 documentation
+- Created Log Analytics workspace (LAW-Cactus)
+- Configured subscription Activity Log diagnostic settings
+- Centralized operational logs in Log Analytics
+- Completed Day 8 documentation
 ### In Progress
 
-- Enterprise Infrastructure Expansion
-- Network Security Planning
+- Monitoring Validation
+- Architecture Documentation
 
 ### Upcoming
 
-- Network Security Groups
-- Additional Subnets
-- Azure Virtual Machines
-- Azure Storage Accounts
-- Microsoft Entra ID
-- Azure Monitor
-- Cloud Security Controls
+- Additional Monitoring Configuration
+- Backup and Recovery
+- Cloud Security Controls 
 - Infrastructure Automation
 - Final Architecture Diagram
 
@@ -147,8 +156,9 @@ project-2-azure-infrastructure/
 │   ├── day-3-virtual-networks.md
 │   ├── day-4-network-security-groups.md
 │   ├── day-5-virtual-machines.md
-│   └── day-6-storage-accounts.md
-│   └── day-7-identity-access-management.md
+│   ├── day-6-storage-accounts.md
+│   ├── day-7-identity-access-management.md
+│   └── day-8-azure-monitor-log-analytics.md
 │
 ├── screenshots/
 │   ├── day2-resource-group.png
@@ -167,12 +177,22 @@ project-2-azure-infrastructure/
 │   │
 │   ├── day6-storage-overview.png
 │   ├── day6-storage-containers.png
-│   └── day6-resource-group.png
+│   ├── day6-resource-group.png
+│   │
 │   ├── day7-iam-overview.png
-│   ├── day7-role-assignment.png
-│   └── day7-built-in-roles.png
+│   ├── day7-role-assignments.png
+│   ├── day7-role-definition.png
+│   │
+│   ├── day8-log-analytics-overview.png
+│   ├── day8-diagnostic-setting.png
+│   └── day8-log-query.png
 │
 └── diagrams/
+    ├── diagram-1-network-foundation.png
+    │
+    ├── diagram-2-first-workload.png
+    │
+    └── diagram-3-current-architecture.png
 ```
 
 ---
