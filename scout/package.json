@@ -1,0 +1,18 @@
+{
+  "name": "scout",
+  "version": "1.0.0",
+  "description": "A personalized new-graduate job discovery and notification server.",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
+  "keywords": [
+    "jobs",
+    "new-grad",
+    "notifications",
+    "nodejs"
+  ],
+  "author": "",
+  "license": "ISC"
+}
