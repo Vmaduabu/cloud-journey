@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors")
 const helmet = require("helmet")
 const morgan = require("morgan")
+const jobsRouter = require("./routes/jobs");
 
 const app = express();
 
@@ -17,6 +18,8 @@ app.get("/health", (req, res) => {
         timestamp: new Date().toISOString(),
     });
 });
+
+app.use("/jobs", jobsRouter);
 
 app.use((req, res) => {
     res.status(404).json({
