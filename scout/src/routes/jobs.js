@@ -1,5 +1,5 @@
-const express = require("express");
-const scoreJob = require("../matching/scoreJob");
+import express from "express";
+import scoreJob from "../matching/scoreJob.js";
 
 const router = express.Router();
 
@@ -29,4 +29,4 @@ router.post("/score", (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;

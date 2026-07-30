@@ -53,4 +53,4 @@ function scoreJob(job) {
   };
 }
 
-module.exports = scoreJob;
+export default scoreJob;
