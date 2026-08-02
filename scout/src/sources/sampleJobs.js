@@ -5,7 +5,7 @@ const sampleJobs = [
         location: "Dallas, TX",
         description:
             "Work directly with customers to deploy cloud software, integrate APIs, and solve technical business problems.",
-        sourceUrl: "https://example.com/jobs/fde-002",
+        sourceUrl: "https://example.com/jobs/fde-email-test-003",
     },
     {
         title: "Senior Infrastructure Engineer",
