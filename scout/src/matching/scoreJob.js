@@ -1,20 +1,50 @@
-function scoreJob(job) {
+export default function scoreJob(job) {
   let score = 0;
   const reasons = [];
 
   const title = job.title.toLowerCase();
   const description = job.description.toLowerCase();
 
+  // Early-career signals
+  if (
+    title.includes("2027 graduate") ||
+    title.includes("new graduate") ||
+    title.includes("new grad") ||
+    title.includes("early career") ||
+    title.includes("entry level")
+  ) {
+    score += 30;
+    reasons.push("Matches early-career target");
+  }
+
+  // Target roles
   if (title.includes("forward deployed")) {
-    score += 50;
-    reasons.push("Matches target role: Forward Deployed Engineer");
+    score += 45;
+    reasons.push("Matches Forward Deployed Engineer");
   }
 
   if (title.includes("software engineer")) {
-    score += 35;
-    reasons.push("Matches target role: Software Engineer");
+    score += 30;
+    reasons.push("Matches Software Engineer");
   }
 
+  if (title.includes("associate consultant")) {
+    score += 30;
+    reasons.push("Matches Associate Consultant");
+  }
+
+  if (
+    title.includes("implementation") ||
+    title.includes("solutions engineer") ||
+    title.includes("technology analyst") ||
+    title.includes("systems analyst") ||
+    title.includes("technical consultant")
+  ) {
+    score += 30;
+    reasons.push("Matches target enterprise technology role");
+  }
+
+  // Work-style signals
   if (
     description.includes("customer") ||
     description.includes("client")
@@ -36,13 +66,42 @@ function scoreJob(job) {
     reasons.push("Mentions cloud technologies");
   }
 
-  const finalScore = Math.min(score, 100);
+  if (
+    description.includes("enterprise") ||
+    description.includes("business requirements")
+  ) {
+    score += 10;
+    reasons.push("Mentions enterprise or business systems");
+  }
+
+  // Seniority penalties
+  if (
+    title.includes("senior") ||
+    title.includes("staff") ||
+    title.includes("principal") ||
+    title.includes("manager") ||
+    title.includes("director")
+  ) {
+    score -= 50;
+    reasons.push("Role appears too senior");
+  }
+
+  if (
+    description.includes("5+ years") ||
+    description.includes("7+ years") ||
+    description.includes("10+ years")
+  ) {
+    score -= 40;
+    reasons.push("Experience requirement is too high");
+  }
+
+  const finalScore = Math.max(0, Math.min(score, 100));
 
   let matchLevel = "low";
 
-  if (finalScore >= 75) {
+  if (finalScore >= 70) {
     matchLevel = "strong";
-  } else if (finalScore >= 50) {
+  } else if (finalScore >= 45) {
     matchLevel = "moderate";
   }
 
@@ -52,5 +111,3 @@ function scoreJob(job) {
     reasons,
   };
 }
-
-export default scoreJob;

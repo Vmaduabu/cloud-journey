@@ -3,6 +3,7 @@ import scoreJob from "../matching/scoreJob.js";
 import { saveJob } from "../services/jobService.js";
 import sampleJobs from "../sources/sampleJobs.js";
 import { ingestJobs } from "../services/jobIngestionService.js";
+import { ingestGreenhouseBoard } from "../services/greenhouseIngestionService.js";
 
 const router = express.Router();
 
@@ -82,4 +83,66 @@ router.post("/ingest-samples", async (req, res) => {
   }
 });
 
-export default router;
+router.post("/ingest-greenhouse", async (req, res) => {
+  try {
+    const { boardToken, company } = req.body;
+
+    if (!boardToken || !company) {
+      return res.status(400).json({
+        error: "boardToken and company are required",
+      });
+    }
+
+    const ingestion = await ingestGreenhouseBoard({
+      boardToken,
+      company,
+    });
+
+   const summary = {
+  fetched: ingestion.fetched,
+
+  processed: ingestion.results.filter(
+    (result) => result.status === "processed"
+  ).length,
+
+  filtered: ingestion.results.filter(
+    (result) => result.status === "filtered"
+  ).length,
+
+  failed: ingestion.results.filter(
+    (result) => result.status === "failed"
+  ).length,
+
+  newJobs: ingestion.results.filter(
+    (result) =>
+      result.status === "processed" &&
+      result.duplicate === false
+  ).length,
+
+  duplicates: ingestion.results.filter(
+    (result) =>
+      result.status === "processed" &&
+      result.duplicate === true
+  ).length,
+
+  notificationsSent: ingestion.results.filter(
+    (result) => result.notification?.sent === true
+  ).length,
+};
+
+    return res.status(200).json({
+      source: ingestion.source,
+      company: ingestion.company,
+      summary,
+      results: ingestion.results,
+    });
+  } catch (error) {
+    console.error("Failed to ingest Greenhouse jobs:", error);
+
+    return res.status(500).json({
+      error: "Failed to ingest Greenhouse jobs",
+    });
+  }
+});
+
+        export default router;
