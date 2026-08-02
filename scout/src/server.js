@@ -1,11 +1,18 @@
 import "dotenv/config";
 import app from "./app.js";
+import { startJobScanScheduler } from "./scheduler/jobScanScheduler.js";
 
 const port = Number(process.env.PORT) || 3000;
 
 const server = app.listen(port, () => {
   console.log(`Scout server running at http://localhost:${port}`);
 });
+
+startJobScanScheduler();
+
+// Temporary manual scheduler test
+// import { runJobScan } from "./scheduler/jobScanScheduler.js";
+// runJobScan();
 
 function shutdown(signal) {
   console.log(`${signal} received. Shutting down Scout...`);
