@@ -21,7 +21,6 @@ services:
       timeout: 5s
       retries: 10
 
-
   scout-api:
     build:
       context: .
@@ -37,8 +36,9 @@ services:
     environment:
       PORT: 3000
       NODE_ENV: development
+      ENABLE_LOCAL_SCHEDULER: "false"
 
-      DATABASE_URL: postgresql://scout:scoutpassword@postgres:5432/scout?schema=public
+      DATABASE_URL: "postgresql://scout:scoutpassword@postgres:5432/scout?schema=public"
 
       RESEND_API_KEY: ${RESEND_API_KEY}
       SCOUT_NOTIFICATION_EMAIL: ${SCOUT_NOTIFICATION_EMAIL}
@@ -46,7 +46,6 @@ services:
 
     ports:
       - "3000:3000"
-
 
 volumes:
   scout_postgres_data:

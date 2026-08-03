@@ -8,11 +8,11 @@ const server = app.listen(port, () => {
   console.log(`Scout server running at http://localhost:${port}`);
 });
 
-startJobScanScheduler();
-
-// Temporary manual scheduler test
-// import { runJobScan } from "./scheduler/jobScanScheduler.js";
-// runJobScan();
+if (process.env.ENABLE_LOCAL_SCHEDULER === "true") {
+  startJobScanScheduler();
+} else {
+  console.log("[Scout] Local scheduler disabled.");
+}
 
 function shutdown(signal) {
   console.log(`${signal} received. Shutting down Scout...`);
