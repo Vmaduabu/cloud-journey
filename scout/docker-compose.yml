@@ -3,14 +3,50 @@ services:
     image: postgres:16
     container_name: scout-postgres
     restart: unless-stopped
+
     environment:
       POSTGRES_USER: scout
       POSTGRES_PASSWORD: scoutpassword
       POSTGRES_DB: scout
+
     ports:
       - "5432:5432"
+
     volumes:
       - scout_postgres_data:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U scout -d scout"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+
+  scout-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    container_name: scout-api
+    restart: unless-stopped
+
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+    environment:
+      PORT: 3000
+      NODE_ENV: development
+
+      DATABASE_URL: postgresql://scout:scoutpassword@postgres:5432/scout?schema=public
+
+      RESEND_API_KEY: ${RESEND_API_KEY}
+      SCOUT_NOTIFICATION_EMAIL: ${SCOUT_NOTIFICATION_EMAIL}
+      SCOUT_FROM_EMAIL: ${SCOUT_FROM_EMAIL}
+
+    ports:
+      - "3000:3000"
+
 
 volumes:
   scout_postgres_data:
